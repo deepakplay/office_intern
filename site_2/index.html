@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validaton 1</title>
+	<meta charset="utf-8" content="text/html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<script src="assets/script.js" defer=""></script>
+</head>
+<body>
+	<div class="registation_form">
+		<h1>Registration Form</h1>
+		<form name="register" method="post" action="thanks.html" onsubmit="return validate()">
+			<table>
+				<tr>
+					<td><label for="user_id"><span style="color:red">*</span>User Id: </label></td>
+					<td><input type="text" name="user" id="user_id" placeholder="Enter the username" required></td>
+				</tr>
+				<tr>
+					<td><label for="pass"><span style="color:red">*</span>Password: </label></td>
+					<td><input type="password" name="pass" id="pass" placeholder="Enter the password" required></td>
+				</tr>
+				<tr>
+					<td><label for="name"><span style="color:red">*</span>Full Name: </label></td>
+					<td><input type="text" name="name" id="name" placeholder="Enter your full name" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="address">Address: </label></td>
+					<td><input type="text" name="address" id="address" placeholder="Enter your address"></td>
+				</tr>
+
+				<tr>
+					<td><label for="country"><span style="color:red">*</span>Country: </label></td>
+					<td>
+						<select name="country" id="country">
+							<option value="none"> Select your country</option>
+							<option value="in">India</option>
+							<option value="sl">SriLanka</option>
+							<option value="pk">Pakistan</option>
+							<option value="ch">China</option>
+							<option value="us">US</option>
+							<option value="au">Australia</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td><label for="zip_code"><span style="color:red">*</span>ZIP Code:</label></td>
+					<td><input type="number" name="zip_code" id="zip_code" placeholder="Enter your ZIP Code" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="email"><span style="color:red">*</span>Email: </label></td>
+					<td><input type="text" name="email" placeholder="Enter your Email" id="email" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="gender"><span style="color:red">*</span>Gender: </label></td>
+					<td>
+						<input type="radio" name="gender" id="gender" value="m" required>Male
+						<input type="radio" name="gender" id="gender" value="f" required>Female
+					</td>
+				</tr>
+
+				<tr>
+					<td><label for="language:"><span style="color:red">*</span>Language: </label></td>
+					<td>
+						<input type="checkbox" name="language" id="language" value="eng"> English
+						<input type="checkbox" name="language" id="language" value="non"> Non English
+					</td>
+				</tr>
+
+				<tr>
+					<td><label for="about">About: </label></td>
+					<td><textarea name="about" id="about" rows="10" cols="30"></textarea>
+						<p class="about_limit">Not more than 150 Characters</p></td>
+				</tr>
+
+				<tr class="submit">
+					<td colspan="2"><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+			
+		</form>
+	</div>
+</body>
+</html>

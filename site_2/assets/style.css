@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	outline: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+}
+
+.registation_form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.registation_form h1{
+	text-align: center;
+	margin: 10px;
+}
+
+.registation_form form{
+	border:1px solid #666;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0px auto;
+	padding:15px 30px; 
+}
+
+.registation_form form tr td:first-child{
+	text-align: right;
+}
+
+.registation_form form tr td[colspan]:first-child{
+	text-align: center;
+}
+
+.registation_form form td{
+	padding: 5px;
+}
+
+.registation_form form input ,
+.registation_form form select,
+.registation_form form textarea{
+	border: 1px solid #999;
+	background-color: #fff;
+	padding:5px;
+}
+
+.error {
+    border: 1px solid #ff5a5a !important;
+    box-shadow: 0 0 3px #ff5a5a !important;
+}
+
+.about_limit{
+	font-size: .8rem; color:#555;
+	text-align: right;
+}
+
