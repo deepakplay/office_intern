@@ -37,6 +37,5 @@ document.querySelector('.math_operation').addEventListener('click', (event)=>{
 			result.value+= button_clicked.innerText;
 		}
 	}
-	result.focus();	
 });
 
