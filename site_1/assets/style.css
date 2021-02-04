@@ -41,14 +41,13 @@ body{
 }
 
 .contact span{
-	padding:8px;
+	padding: 8px;
 	font-weight: bold;
 }
 
 .contact a:hover{
 	text-decoration: underline;
 }
-
 
 .social_icons{
 	display:inline;
@@ -93,7 +92,6 @@ body{
 	display: flex;
 	justify-content: space-between;
 	padding: 30px 50px;
-
 }
 
 .logo_img{
@@ -213,11 +211,11 @@ footer a{
 	}
 
 	.main_header .close_nav{
-		display: block;
+		display: inline-block;
 		color: #FFF;
 		font-size: 1.8rem;
 		padding: 8px 20px 0px;
-		text-align: left;
+		margin-right: 90%;
 	}
 
 	.main_header .close_nav:hover{
