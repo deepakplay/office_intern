@@ -43,6 +43,7 @@ body{
 
 .registation_form form td{
 	padding: 5px;
+	vertical-align: top;	
 }
 
 .registation_form form input ,
@@ -60,6 +61,12 @@ body{
 
 .about_limit{
 	font-size: .8rem; color:#555;
-	text-align: right;
 }
 
+.error_msg{
+	color:#F00;
+	font-size:.9rem;
+	display: block;
+	font-style: italic;
+	padding-top:5px;
+}
