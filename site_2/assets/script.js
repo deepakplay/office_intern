@@ -1,9 +1,9 @@
+'use strict';
 function insertErrorMsg(element, msg){
 	element.insertAdjacentHTML("afterend", `<span class="error_msg">${msg}</span>`);
 }
 
 document.forms["register"].addEventListener("submit", function(e){
-	console.log(this);
 	let user_id = this["user"];
 	let password = this["pass"];
 	let name = this["name"];
@@ -14,7 +14,6 @@ document.forms["register"].addEventListener("submit", function(e){
 	let language = this["language"];
 	let about = this["about"];
 	let validForm = true;
-	console.log(user_id);
 
 	Array.from(document.querySelectorAll('.error')).forEach((val)=>{
 		val.classList.remove('error');

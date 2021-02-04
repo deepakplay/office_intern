@@ -1,3 +1,5 @@
+'use strict';
+
 document.querySelector('.math_operation').addEventListener('click', (event)=>{
 	const button_clicked = event.target;
 	const result = document.querySelector("#calc_text");

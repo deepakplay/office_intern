@@ -18,10 +18,7 @@ document.querySelector(".main_header .close_nav").addEventListener('click', (e)=
 
 window.addEventListener('resize', (e)=>{
 	if(e.target.outerWidth>=700){
-		console.log("Desktop Mode");
 		document.querySelector(".main_header ul").removeAttribute('style');
 		menu_open = false;
-	}else{
-		console.log("Mobile Mode");
-	};	
+	}
 })
