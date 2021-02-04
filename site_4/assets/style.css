@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+	margin:0px;
+	border: 0px;
+	padding: 0px;
+	outline: none;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+body{
+	background:linear-gradient(to right, #CCC, #FFF);
+	background-size: all;
+	font-size:1rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+.calander{
+	width: 350px;
+	height: 380px;
+	background-color: #EFEFFF;
+	margin:70px auto 0px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+
+.top_controller{
+	background-color: #606060;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.top_controller .left_button, 
+.top_controller .right_button,
+.top_controller .year_button{
+	display: inline-block;
+	background: #777;
+	font-size: 1.1rem;
+	padding: 10px 12px;
+	color:#FFF;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+.month_container{
+	margin-top: 30px;
+}
+
+.month_container td{
+	padding: 20px;
+	border:1px solid #aaa;
+	cursor: pointer;
+}
+
+.date_container{
+	padding: 20px;
+	
+}
+
+.date_container table, .month_container table{
+	margin: 0px auto;
+	border-collapse: collapse;
+}
+
+.date_container th{
+	background-color: #555;
+	color:#FFF;
+}
+
+.date_container td, .date_container th{
+	padding: 10px 0;
+	border:1px solid #aaa;
+	margin: 0px;
+	font-weight: normal;
+	width: 50px;
+	text-align: center;
+}
+
+.date_container td{
+	cursor:pointer;
+}
+
+.date_container td:hover, .month_container td:hover{
+	background-color: #BBB;
+	transition: background-color .2s ease;
+}
