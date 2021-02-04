@@ -4,16 +4,17 @@ function insertErrorMsg(element, msg){
 
 document.forms["register"].addEventListener("submit", function(e){
 	console.log(this);
-	let user_id = document.forms["register"]["user"];
-	let password = document.forms["register"]["pass"];
-	let name = document.forms["register"]["name"];
-	let country = document.forms["register"]["country"];
-	let zip_code = document.forms["register"]["zip_code"];
-	let email = document.forms["register"]["email"];
-	let gender = document.forms["register"]["gender"];
-	let language = document.forms["register"]["language"];
-	let about = document.forms["register"]["about"];
+	let user_id = this["user"];
+	let password = this["pass"];
+	let name = this["name"];
+	let country = this["country"];
+	let zip_code = this["zip_code"];
+	let email = this["email"];
+	let gender = this["gender"];
+	let language = this["language"];
+	let about = this["about"];
 	let validForm = true;
+	console.log(user_id);
 
 	Array.from(document.querySelectorAll('.error')).forEach((val)=>{
 		val.classList.remove('error');
@@ -24,62 +25,64 @@ document.forms["register"].addEventListener("submit", function(e){
 	})
 
 	if(user_id.value == "" || user_id.value == null){
-		user_id.classList.add("error");
-		insertErrorMsg(user_id, "User ID must be entered");
+		user_id.classList.add('error');
+		insertErrorMsg(user_id, 'User ID must be required');
 		validForm = false;
 	}else if(user_id.value.length<5 || user_id.value.length>12){
-		user_id.classList.add("error");
-		insertErrorMsg(user_id, "User ID must be in length 5 to 12 characters");
+		user_id.classList.add('error');
+		insertErrorMsg(user_id, 'User ID must be in length 5 to 12 characters');
 		validForm = false;
 	}
 
 	if(password.value == "" || password.value == null){
-		password.classList.add("error");
-		insertErrorMsg(password, "Password must be entered");
+		password.classList.add('error');
+		insertErrorMsg(password, 'Password must be required');
 		validForm = false;
 	}else if(password.value.length<7 || password.value.length>12){
-		password.classList.add("error");
-		insertErrorMsg(password, "Password must be in length 7 to 12 characters");
+		password.classList.add('error');
+		insertErrorMsg(password, 'Password must be in length 7 to 12 characters');
 		validForm = false;
 	}
 
-	e.preventDefault();
-	/*
-
-	if(password.value.length<7 || password.value.length>12){
-		password.classList.add("error");
-		insertErrorMsg(password, "Password must be in length 7 to 12 characters");
+	if(name.value == "" || name.value == null){
+		name.classList.add('error');
+		insertErrorMsg(name, 'Full name must be required');
+		validForm = false;
+	}else if(!(/[a-zA-Z]+$/.test(name.value))){
+		name.classList.add('error');
+		insertErrorMsg(name, 'Name must contains alphabates only');
 		validForm = false;
 	}
 
-	if(!(/[a-zA-Z]+$/.test(name.value))){
-		name.classList.add("error");
-		insertErrorMsg(name, "Name must contains alphabates only");
+	if(country.value=='none' || country.value==null){
+		country.classList.add('error');
+		insertErrorMsg(country, 'Country must be specified');
 		validForm = false;
 	}
 
-	if(country.value==='none' || country.value===null){
-		country.classList.add("error");
-		insertErrorMsg(country, "Country Must be specified");
+	if(zip_code.value=='' || zip_code.value==null){
+		zip_code.classList.add('error');
+		insertErrorMsg(zip_code, 'ZIP Code must be required');
 		validForm = false;
 	}
 
-	if(!zip_code.value){
-		zip_code.classList.add("error");
-		insertErrorMsg(zip_code, "Enter the valid Zip Code");
-		validForm = false;
+	if(isNaN(zip_code.value)){
+		zip_code.classList.add('error');
+		insertErrorMsg(zip_code, 'Invalid zip code');
+		validForm = false;	
 	}
 
 	if(!(/\S+@\S+\.\S+/.test(email.value))){
-		email.classList.add("error");
-		insertErrorMsg(email, "Enter the valid Email address");
+		email.classList.add('error');
+		insertErrorMsg(email, 'Enter the valid Email address');
 		validForm = false;
 	}
 
 	if(!(gender.value)){
-		insertErrorMsg(gender, "Enter your gender");
+		insertErrorMsg(document.querySelector('.gender_error'), 'Enter your gender');
 		validForm = false;
 	}
+
 
 	let language_selected =false;
 	language.forEach((val)=>{
@@ -87,14 +90,15 @@ document.forms["register"].addEventListener("submit", function(e){
 	});
 	
 	if(!language_selected){
-		insertErrorMsg(language, "Enter your Language");
+		insertErrorMsg(document.querySelector('.language_error'), 'Enter your Language');
 		validForm = false;
 	}
 
-	if(about.value.length>=150){
-		about.classList.add("error");
-		insertErrorMsg(language, "About not more than 150 characters");
+	if(about.value.length >150){
+		about.classList.add('error');
+		insertErrorMsg(about, 'About not more than 150 characters');
 		validForm = false;
-	}*/
-	
+	}
+
+	if(!validForm) e.preventDefault();	
 });
