@@ -22,7 +22,7 @@ function printMonth(date){
 			<th>Mon</th>
 			<th>Tue</th>
 			<th>Wed</th>
-			<th>The</th>
+			<th>Thu</th>
 			<th>Fri</th>
 			<th>Sat</th>
 		</tr>
